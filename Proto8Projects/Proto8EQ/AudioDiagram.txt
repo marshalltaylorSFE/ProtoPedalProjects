@@ -1,0 +1,26 @@
+#include <Audio.h>
+#include <Wire.h>
+#include <SPI.h>
+#include <SD.h>
+#include <SerialFlash.h>
+
+// GUItool: begin automatically generated code
+AudioInputI2SQuad        i2s_quad1;      //xy=114,128
+AudioFilterBiquad        biquad3;        //xy=366,151
+AudioFilterBiquad        biquad1;        //xy=367,70
+AudioFilterBiquad        biquad2;        //xy=367,112
+AudioMixer4              mixer1;         //xy=600,111
+AudioOutputI2SQuad       i2s_quad2;      //xy=705,299
+AudioConnection          patchCord1(i2s_quad1, 0, biquad1, 0);
+AudioConnection          patchCord2(i2s_quad1, 0, biquad2, 0);
+AudioConnection          patchCord3(i2s_quad1, 0, biquad3, 0);
+AudioConnection          patchCord4(biquad3, 0, mixer1, 2);
+AudioConnection          patchCord5(biquad1, 0, mixer1, 0);
+AudioConnection          patchCord6(biquad2, 0, mixer1, 1);
+AudioConnection          patchCord7(mixer1, 0, i2s_quad2, 0);
+AudioConnection          patchCord8(mixer1, 0, i2s_quad2, 1);
+AudioConnection          patchCord9(mixer1, 0, i2s_quad2, 2);
+AudioConnection          patchCord10(mixer1, 0, i2s_quad2, 3);
+AudioControlSGTL5000     sgtl5000_1;     //xy=441,306
+AudioControlSGTL5000     sgtl5000_2;     //xy=441,345
+// GUItool: end automatically generated code
