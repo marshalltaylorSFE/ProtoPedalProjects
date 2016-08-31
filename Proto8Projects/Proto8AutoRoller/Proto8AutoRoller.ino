@@ -5,25 +5,37 @@
 #include <SerialFlash.h>
 
 // GUItool: begin automatically generated code
-AudioInputI2SQuad        i2s_quad1;      //xy=114,128
-AudioFilterBiquad        biquad2;        //xy=304,108
-AudioFilterBiquad        biquad1;        //xy=367,70
-AudioFilterBiquad        biquad3;        //xy=379,152
-AudioMixer4              mixer1;         //xy=600,111
-AudioOutputI2SQuad       i2s_quad2;      //xy=705,299
+AudioInputI2SQuad        i2s_quad1;      //xy=98,99
+AudioSynthWaveformDc     dc1;            //xy=222,330
+AudioFilterBiquad        biquad3;        //xy=305,138
+AudioFilterBiquad        biquad1;        //xy=306,57
+AudioFilterBiquad        biquad2;        //xy=306,99
+AudioEffectMultiply      multiply1;      //xy=394,284
+AudioSynthWaveformSine   sine1;          //xy=416,375
+AudioMixer4              mixer1;         //xy=501,104
+AudioAnalyzePeak         peak1;          //xy=604,209
+AudioFilterStateVariable filter1;        //xy=621,277
+AudioOutputI2SQuad       i2s_quad2;      //xy=790,269
 AudioConnection          patchCord1(i2s_quad1, 0, biquad1, 0);
 AudioConnection          patchCord2(i2s_quad1, 0, biquad2, 0);
 AudioConnection          patchCord3(i2s_quad1, 0, biquad3, 0);
-AudioConnection          patchCord4(biquad2, 0, mixer1, 1);
-AudioConnection          patchCord5(biquad1, 0, mixer1, 0);
-AudioConnection          patchCord6(biquad3, 0, mixer1, 2);
-AudioConnection          patchCord7(mixer1, 0, i2s_quad2, 0);
-AudioConnection          patchCord8(mixer1, 0, i2s_quad2, 1);
-AudioConnection          patchCord9(mixer1, 0, i2s_quad2, 2);
-AudioConnection          patchCord10(mixer1, 0, i2s_quad2, 3);
-AudioControlSGTL5000     sgtl5000_1;     //xy=441,306
-AudioControlSGTL5000     sgtl5000_2;     //xy=441,345
+AudioConnection          patchCord4(dc1, 0, multiply1, 1);
+AudioConnection          patchCord5(biquad3, 0, mixer1, 2);
+AudioConnection          patchCord6(biquad1, 0, mixer1, 0);
+AudioConnection          patchCord7(biquad2, 0, mixer1, 1);
+AudioConnection          patchCord8(multiply1, 0, filter1, 0);
+AudioConnection          patchCord9(multiply1, peak1);
+AudioConnection          patchCord10(sine1, 0, filter1, 1);
+AudioConnection          patchCord11(mixer1, 0, multiply1, 0);
+AudioConnection          patchCord12(filter1, 0, i2s_quad2, 0);
+AudioConnection          patchCord13(filter1, 0, i2s_quad2, 1);
+AudioConnection          patchCord14(filter1, 0, i2s_quad2, 2);
+AudioConnection          patchCord15(filter1, 0, i2s_quad2, 3);
+AudioControlSGTL5000     sgtl5000_1;     //xy=798,40
+AudioControlSGTL5000     sgtl5000_2;     //xy=798,79
 // GUItool: end automatically generated code
+
+
 
 
 
@@ -129,6 +141,14 @@ void setup()
 	mixer1.gain(1, (float)p8hid.p8Param[5] / 256);
 	biquad3.setHighpass(0, 400 + 15000 * ((float)p8hid.p8Param[6] / 256), 0.707);
 	mixer1.gain(2, (float)p8hid.p8Param[7] / 256);
+	filter1.frequency(20 + 7000 * (float)p8hid.p8Param[8] / 256);
+	filter1.resonance(5 * (float)p8hid.p8Param[9] / 256);
+	sine1.amplitude((float)p8hid.p8Param[10] / 256);
+	p8hid.modFreqVar = ((float)p8hid.p8Param[11] / 256);
+	p8hid.modFreqDepth = ((float)p8hid.p8Param[12] / 256);
+	dc1.amplitude((float)p8hid.p8Param[13] / 256);
+	
+	filter1.octaveControl(1);
 	
 	LEDs.begin();
 	knobs.begin();
@@ -141,6 +161,8 @@ void setup()
 	delay(1000);
 	// initialize IntervalTimer
 	myTimer.begin(serviceUS, 1);  // serviceMS to run every 0.001 seconds
+	
+	
 	
 }
 

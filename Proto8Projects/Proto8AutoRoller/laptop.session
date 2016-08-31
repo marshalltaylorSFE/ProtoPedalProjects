@@ -1,0 +1,21 @@
+<NotepadPlus>
+    <Session activeView="0">
+        <mainView activeIndex="0">
+            <File firstVisibleLine="132" xOffset="0" scrollWidth="928" startPos="4988" endPos="4988" selMode="0" lang="C++" encoding="-1" filename="C:\github\ProtoPedalProjects\Proto8Projects\Proto8AutoRoller\Proto8AutoRoller.ino" backupFilePath="" originalFileLastModifTimestamp="1472626290" />
+            <File firstVisibleLine="237" xOffset="0" scrollWidth="896" startPos="6670" endPos="6670" selMode="0" lang="C++" encoding="-1" filename="C:\github\ProtoPedalProjects\Proto8Projects\Proto8AutoRoller\P8Interface.cpp" backupFilePath="" originalFileLastModifTimestamp="1472624588" />
+            <File firstVisibleLine="39" xOffset="0" scrollWidth="736" startPos="1305" endPos="1305" selMode="0" lang="C++" encoding="-1" filename="C:\github\ProtoPedalProjects\Proto8Projects\Proto8AutoRoller\P8Interface.h" backupFilePath="" originalFileLastModifTimestamp="1472626021" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="696" startPos="0" endPos="0" selMode="0" lang="Normal Text" encoding="-1" filename="C:\github\ProtoPedalProjects\Proto8Projects\Proto8AutoRoller\README.md" backupFilePath="" originalFileLastModifTimestamp="1472538021" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="504" startPos="1845" endPos="1845" selMode="0" lang="Normal Text" encoding="-1" filename="C:\github\ProtoPedalProjects\Proto8Projects\Proto8AutoRoller\AudioDiagram.txt" backupFilePath="" originalFileLastModifTimestamp="1472625207" />
+        </mainView>
+        <subView activeIndex="0">
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="592" startPos="550" endPos="550" selMode="0" lang="C++" encoding="-1" filename="C:\github\ProtoPedalProjects\Proto8Projects\Proto8AutoRoller\P8PanelComponents.cpp" backupFilePath="" originalFileLastModifTimestamp="1472536255" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="1" startPos="0" endPos="0" selMode="0" lang="C++" encoding="-1" filename="C:\github\ProtoPedalProjects\Proto8Projects\Proto8AutoRoller\P8PanelComponents.h" backupFilePath="" originalFileLastModifTimestamp="1472526776" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="1" startPos="0" endPos="0" selMode="0" lang="C++" encoding="-1" filename="C:\github\ProtoPedalProjects\Proto8Projects\Proto8AutoRoller\proto-8Hardware.cpp" backupFilePath="" originalFileLastModifTimestamp="1472526776" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="1" startPos="0" endPos="0" selMode="0" lang="C++" encoding="-1" filename="C:\github\ProtoPedalProjects\Proto8Projects\Proto8AutoRoller\proto-8Hardware.h" backupFilePath="" originalFileLastModifTimestamp="1472526776" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="1" startPos="0" endPos="0" selMode="0" lang="C++" encoding="-1" filename="C:\github\ProtoPedalProjects\Proto8Projects\Proto8AutoRoller\VoltageMonitor.cpp" backupFilePath="" originalFileLastModifTimestamp="1472526776" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="1" startPos="0" endPos="0" selMode="0" lang="C++" encoding="-1" filename="C:\github\ProtoPedalProjects\Proto8Projects\Proto8AutoRoller\VoltageMonitor.h" backupFilePath="" originalFileLastModifTimestamp="1472526776" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="1" startPos="0" endPos="0" selMode="0" lang="C++" encoding="-1" filename="C:\github\ProtoPedalProjects\Proto8Projects\Proto8AutoRoller\P8Panel.cpp" backupFilePath="" originalFileLastModifTimestamp="1472536228" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="592" startPos="0" endPos="0" selMode="0" lang="C++" encoding="-1" filename="C:\github\ProtoPedalProjects\Proto8Projects\Proto8AutoRoller\P8Panel.h" backupFilePath="" originalFileLastModifTimestamp="1472528020" />
+        </subView>
+    </Session>
+</NotepadPlus>

@@ -25,12 +25,18 @@
 #include <SD.h>
 #include <SerialFlash.h>
 
-extern AudioInputI2SQuad        i2s_quad1;      //xy=114,128
-extern AudioFilterBiquad        biquad2;        //xy=304,108
-extern AudioFilterBiquad        biquad1;        //xy=367,70
-extern AudioFilterBiquad        biquad3;        //xy=379,152
-extern AudioMixer4              mixer1;         //xy=600,111
-extern AudioOutputI2SQuad       i2s_quad2;      //xy=705,299
+// GUItool: begin automatically generated code
+extern AudioInputI2SQuad        i2s_quad1;      //xy=98,99
+extern AudioSynthWaveformDc     dc1;            //xy=222,330
+extern AudioFilterBiquad        biquad3;        //xy=305,138
+extern AudioFilterBiquad        biquad1;        //xy=306,57
+extern AudioFilterBiquad        biquad2;        //xy=306,99
+extern AudioEffectMultiply      multiply1;      //xy=394,284
+extern AudioSynthWaveformSine   sine1;          //xy=416,375
+extern AudioMixer4              mixer1;         //xy=501,104
+extern AudioFilterStateVariable filter1;        //xy=621,277
+extern AudioOutputI2SQuad       i2s_quad2;      //xy=790,269
+extern AudioAnalyzePeak         peak1;          //xy=816,143
 extern AudioControlSGTL5000     sgtl5000_1;     //xy=441,306
 extern AudioControlSGTL5000     sgtl5000_2;     //xy=441,345
 
@@ -240,11 +246,32 @@ void P8Interface::processMachine( void )
 			case 7:
 			mixer1.gain(2, (float)p8Param[activeParam] / 256);
 			break;
+			case 8:
+			filter1.frequency(20 + 7000 * (float)p8Param[activeParam] / 256);
+			break;
+			case 9:
+			filter1.resonance(5 * (float)p8Param[activeParam] / 256);
+			break;
+			case 10:
+			sine1.amplitude((float)p8Param[activeParam] / 256);
+			break;
+			case 11:
+			modFreqVar = ((float)p8Param[activeParam] / 256);
+			break;
+			case 12:
+			modFreqDepth = ((float)p8Param[activeParam] / 256);
+			break;
+			case 13:
+			dc1.amplitude((float)p8Param[activeParam] / 256);
+			break;
 			default:
 			break;
 			
 		}
 	}
+	
+	//update freq
+	sine1.frequency(0 + 100 * peak1.read() * modFreqDepth);
 	
 	LEDs.setNumber1( fixtureKnob.getState() );
 	float tempVoltage = 0;

@@ -47,12 +47,15 @@ public:
 	
 	//Template Parameters
 	//  Set initial values here
-	uint8_t p8Param[15] = {190,4,210,240,73,50,45,255,0,0,0,0,0,0,0}; //Save 16 for idle
+	uint8_t p8Param[15] = {190,4,210,240,73,50,45,255,255,0,0,0,0,255,0}; //Save 16 for idle
 	//  p8ParamSync used for knob resyncing
 	uint8_t p8ParamSync = 0;
 	//  Choose how many params for the project
-	uint8_t p8ParamActive[15] = {1,1,1,1,1,1,1,1,0,0,0,0,0,0,0};
+	uint8_t p8ParamActive[15] = {1,1,1,1,1,1,1,1,1,1,1,1,1,1,0};
 	uint8_t activeParam = 0;
+	
+	float modFreqVar = 0;
+	float modFreqDepth = 0;
 	
 	
 private:

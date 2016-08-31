@@ -13,9 +13,9 @@ AudioFilterBiquad        biquad2;        //xy=306,99
 AudioEffectMultiply      multiply1;      //xy=394,284
 AudioSynthWaveformSine   sine1;          //xy=416,375
 AudioMixer4              mixer1;         //xy=501,104
+AudioAnalyzePeak         peak1;          //xy=604,209
 AudioFilterStateVariable filter1;        //xy=621,277
 AudioOutputI2SQuad       i2s_quad2;      //xy=790,269
-AudioAnalyzePeak         peak1;          //xy=816,143
 AudioConnection          patchCord1(i2s_quad1, 0, biquad1, 0);
 AudioConnection          patchCord2(i2s_quad1, 0, biquad2, 0);
 AudioConnection          patchCord3(i2s_quad1, 0, biquad3, 0);
@@ -24,8 +24,8 @@ AudioConnection          patchCord5(biquad3, 0, mixer1, 2);
 AudioConnection          patchCord6(biquad1, 0, mixer1, 0);
 AudioConnection          patchCord7(biquad2, 0, mixer1, 1);
 AudioConnection          patchCord8(multiply1, 0, filter1, 0);
-AudioConnection          patchCord9(sine1, 0, filter1, 1);
-AudioConnection          patchCord10(mixer1, peak1);
+AudioConnection          patchCord9(multiply1, peak1);
+AudioConnection          patchCord10(sine1, 0, filter1, 1);
 AudioConnection          patchCord11(mixer1, 0, multiply1, 0);
 AudioConnection          patchCord12(filter1, 0, i2s_quad2, 0);
 AudioConnection          patchCord13(filter1, 0, i2s_quad2, 1);
