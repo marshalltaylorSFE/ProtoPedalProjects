@@ -127,12 +127,14 @@ void setup()
 	sgtl5000_1.volume(0.5);
 	sgtl5000_1.inputSelect(AUDIO_INPUT_LINEIN);
 	sgtl5000_1.unmuteHeadphone();
+	sgtl5000_1.lineInLevel(10);
 	
 	sgtl5000_2.setAddress(HIGH);
 	sgtl5000_2.enable();
 	sgtl5000_2.volume(0.5);
 	sgtl5000_2.unmuteHeadphone();
-
+	sgtl5000_2.lineInLevel(10);
+	
 	sgtl5000_1.volume((float)p8hid.p8Param[0] / 256);
 	sgtl5000_2.volume((float)p8hid.p8Param[0] / 256);
 	biquad1.setLowpass(0, 200 + 5000 * ((float)p8hid.p8Param[1] / 256), 0.707);
